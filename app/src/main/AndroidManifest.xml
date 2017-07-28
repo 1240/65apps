@@ -2,15 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.l24o.template">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".TemplateApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".TemplateApplication"
-        android:theme="@style/AppTheme">
-        <activity android:name=".modules.main.MainActivity">
+        android:theme="@style/AppTheme.Light">
+        <activity
+            android:name=".modules.person.PersonListActivity"
+            android:label="@string/person_list_title" />
+        <activity
+            android:name=".modules.person.info.PersonActivity"
+            android:label="@string/person_title" />
+        <activity
+            android:name=".modules.speciality.SpecialityListActivity"
+            android:label="@string/speciality_title" />
+        <activity
+            android:name=".modules.splash.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

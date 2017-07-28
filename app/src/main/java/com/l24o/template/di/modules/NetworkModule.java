@@ -5,6 +5,7 @@ import com.l24o.template.Constants;
 import com.l24o.template.data.rest.AuthProvider;
 import com.l24o.template.data.rest.TemplateInterceptor;
 import com.l24o.template.data.rest.datasource.MainDataSource;
+import com.l24o.template.data.rest.repositories.RealmRepository;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +13,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import io.realm.Realm;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -62,6 +64,11 @@ public class NetworkModule {
     @Singleton
     public MainDataSource provideMainDataSource(Retrofit retrofit) {
         return retrofit.create(MainDataSource.class);
+    }
+
+    @Provides
+    public RealmRepository provideRealmRepository(Realm realm) {
+        return new RealmRepository(realm);
     }
 
 }

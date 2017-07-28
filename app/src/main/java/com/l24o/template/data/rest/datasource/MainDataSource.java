@@ -1,5 +1,7 @@
 package com.l24o.template.data.rest.datasource;
 
+import com.l24o.template.data.rest.models.ApiResponse;
+
 import java.util.List;
 
 import retrofit2.http.GET;
@@ -11,7 +13,7 @@ import rx.Observable;
 
 public interface MainDataSource {
 
-    @GET("")
-    public Observable<List<Object>> getUsers();
+    @GET("testTask.json")
+    public Observable<ApiResponse> getInfo();
 
 }

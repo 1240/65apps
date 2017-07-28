@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_height="200dp" />
+
+    <TextView
+        android:id="@+id/tvFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="@dimen/half_default_margin"
+        android:singleLine="true"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+        tools:text="Имя: Иванов ИИ" />
+
+    <TextView
+        android:id="@+id/tvLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="@dimen/half_default_margin"
+        android:singleLine="true"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+        tools:text="Фамилия: Иванов ИИ" />
+
+    <TextView
+        android:id="@+id/tvBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/half_default_margin"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+        tools:text="День рождения: 25.07.2011" />
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/half_default_margin"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+        tools:text="Возраст: 25 лет" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/half_default_margin"
+        android:text="@string/person_speciality"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"/>
+
+    <include layout="@layout/layout_recycler_view" />
+
+</LinearLayout>

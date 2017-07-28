@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">template</string>
+    <string name="app_name">65apps TEST</string>
+    <string name="somthing_wrong">Что-то пошло не так</string>
+    <string name="try_again">Попробовать еще раз</string>
+    <string name="default_empty_list_message_text" />
+    <string name="persons_empty">Работники не найдены</string>
+    <string name="person_fio" formatted="false">ФИО: %s %s</string>
+    <string name="age_1" formatted="false">Восзраст: %s год</string>
+    <string name="age_2" formatted="false">Восзраст: %s лет</string>
+    <string name="birthday_null">День рождения: -</string>
+    <string name="age_null">Восзраст: -</string>
+    <string name="person_list_title">Сотрудники</string>
+    <string name="speciality_title">Специальности</string>
+    <string name="person_speciality">Специальности:</string>
+    <string name="speciality_empty">Специальностей не найдено</string>
+
+    <string name="person_title">Сотрудник</string>
+    <string name="person_first_name" formatted="false">Имя: %s</string>
+    <string name="person_last_name" formatted="false">Фамилия: %s</string>
+    <string name="person_birthday" formatted="false">День рождения: %s</string>
 </resources>

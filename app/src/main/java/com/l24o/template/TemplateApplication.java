@@ -6,6 +6,9 @@ import com.l24o.template.di.AppComponent;
 import com.l24o.template.di.DaggerAppComponent;
 import com.l24o.template.di.modules.AppModule;
 
+import butterknife.ButterKnife;
+import io.realm.Realm;
+
 /**
  * @author Alexander Popov on 11/07/2017.
  */
@@ -22,6 +25,8 @@ public class TemplateApplication extends Application {
         appComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
                 .build();
+        ButterKnife.setDebug(true);
+        Realm.init(this);
     }
 
     public static TemplateApplication getInstance() {

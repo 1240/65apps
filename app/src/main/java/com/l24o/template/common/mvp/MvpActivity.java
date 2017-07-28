@@ -8,23 +8,40 @@ import android.widget.Toast;
 import com.l24o.template.TemplateApplication;
 import com.l24o.template.di.AppComponent;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * @author Alexander Popov on 11/07/2017.
  */
 
 public abstract class MvpActivity extends AppCompatActivity implements MvpContract.IView {
 
+    private Unbinder binder;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         resolveDependencies(application().getAppComponent());
+        int layoutRes = getActivityLayoutRes();
+        if (layoutRes != -1) {
+            setContentView(layoutRes);
+        }
+        binder = ButterKnife.bind(this);
+        initViews();
     }
 
     @Override
     protected void onDestroy() {
         beforeDestroy();
         super.onDestroy();
+        binder.unbind();
     }
+
+    protected void initViews() {}
+
+    //if layout not need -> return -1
+    protected abstract int getActivityLayoutRes();
 
     public abstract void resolveDependencies(AppComponent appComponent);
 

@@ -2,6 +2,8 @@ package com.l24o.template.common.mvp;
 
 import com.l24o.template.TemplateApplication;
 
+import java.util.List;
+
 /**
  * @author Alexander Popov on 11/07/2017.
  */
@@ -21,5 +23,13 @@ public interface MvpContract {
         void dropView();
     }
 
+    interface IListView<M> extends IView {
+        void setLoadingVisible(boolean isVisible);
+        void showData(List<M> dataList);
+    }
+
+    interface IListPresenter<M, V extends IListView<M>> extends IPresenter<V> {
+        void onSwipeToRefresh();
+    }
 
 }
